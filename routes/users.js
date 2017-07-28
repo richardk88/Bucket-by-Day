@@ -14,7 +14,30 @@ router.get('/', (req, res, next) => {
       console.log('Error retrieving users from db');
       console.log(error);
     })
-  
+});
+
+router.get('/new', (req, res) => {
+  res.render('../views/user/new');
+});
+
+router.get('/:userId', (req,res) => {
+  console.log(req.params.userId);
+  const userIdForSearch = req.params.userId;
+  console.log(userIdForSearch);
+  User.findById(userIdForSearch)
+    .then( (user) => {
+      res.render('../views/user/show',{
+        userName: user.userName,
+        userFirstName: user.firstName,
+        userLastName: user.lastName,
+        email: user.email,
+        bucketLists: user.bucketLists
+      });
+    })
+    .catch( (error) => {
+      console.log('Error retrieving user from db');
+      console.log(error);
+    })
 });
 
 module.exports = router;

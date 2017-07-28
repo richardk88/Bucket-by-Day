@@ -1,0 +1,11 @@
+<h1>{{userName}}'s Profile
+
+<div>First Name: {{userFirstName}}</div>
+<div>Last Name: {{userLastName}}</div>
+<div>Email: {{email}}</div>
+<h3>Bucket Lists</h3>
+<ol>
+    {{#each bucketLists}}
+    <li>{{this.name}}</li>
+    {{/each}}
+</ol>
