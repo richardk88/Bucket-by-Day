@@ -4,15 +4,24 @@ const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 const activities = new Schema({
-    name: string,
-    description: string,
-    location: string,
-    duration: string,
-    img: string,
-    linkToInfo: string,
+    name: String,
+    description: String,
+    location: String,
+    duration: String,
+    img: String,
+    linkToInfo: String,
     createAt: Date,
     updatedAt: Date,
-    price: number,
+    price: Number,
+});
+
+activities.pre('save', function(next){
+ now = new Date();
+ this.updatedAt = now;
+ if ( !this.createdAt ) {
+   this.createdAt = now;
+ }
+ next();
 });
 
  const activitiesModel = mongoose.model('Activities', activities);
