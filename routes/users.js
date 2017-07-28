@@ -20,6 +20,24 @@ router.get('/new', (req, res) => {
   res.render('../views/user/new');
 });
 
+router.post('/', (req, res) => {
+  const userInfoFromForm = req.body;
+  User.create(userInfoFromForm)
+    .then( (user) => {
+      res.render('../views/user/show', {
+        userName: user.userName,
+        userFirstName: user.firstName,
+        userLastName: user.lastName,
+        email: user.email,
+        bucketLists: user.bucketLists
+      })
+    })
+    .catch( (error) => {
+      console.log(`Unable to create new user of ${user}`);
+      console.log(error);
+    })
+})
+
 router.get('/:userId', (req,res) => {
   console.log(req.params.userId);
   const userIdForSearch = req.params.userId;
