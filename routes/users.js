@@ -95,4 +95,17 @@ router.put('/:userId', (req, res) => {
       console.log(error);
     })
 })
+
+router.get('/:userId/delete', (req, res) => {
+  const userIdToDelete = req.params.userId;
+  User.findByIdAndRemove(userIdToDelete)
+    .then( (user) => {
+      console.log(`User with id ${user._id} was deleted`);
+      res.redirect('/users');
+    })
+    .catch( (error) => {
+      console.log('Error deleting user in db');
+      console.log(error);
+    })
+});
 module.exports = router;
