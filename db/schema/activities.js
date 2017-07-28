@@ -6,13 +6,15 @@ mongoose.Promise = global.Promise;
 const activities = new Schema({
     name: string,
     description: string,
+    location: string,
+    duration: string,
+    img: string,
+    linkToInfo: string,
     createAt: Date,
     updatedAt: Date,
-    theme: [],
-    activities: [],
-    totalCost: number
+    price: number,
 });
 
- const bucketListModel = mongoose.model('Bucket List', bucketList);
+ const activitiesModel = mongoose.model('Activities', activities);
 
- module.exports = bucketListModel;
+ module.exports = activitiesModel;

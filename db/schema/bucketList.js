@@ -8,9 +8,9 @@ const bucketList = new Schema({
     description: string,
     createAt: Date,
     updatedAt: Date,
+    totalCost: number,
     theme: [],
-    activities: [],
-    totalCost: number
+    activities: []
 });
 
  const bucketListModel = mongoose.model('Bucket List', bucketList);
