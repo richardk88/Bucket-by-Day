@@ -36,15 +36,14 @@ router.post('/', (req, res) => {
       console.log(`Unable to create new user of ${user}`);
       console.log(error);
     })
-})
+});
 
 router.get('/:userId', (req,res) => {
-  console.log(req.params.userId);
   const userIdForSearch = req.params.userId;
-  console.log(userIdForSearch);
   User.findById(userIdForSearch)
     .then( (user) => {
       res.render('../views/user/show',{
+        userId: user._id,
         userName: user.userName,
         userFirstName: user.firstName,
         userLastName: user.lastName,
@@ -58,4 +57,42 @@ router.get('/:userId', (req,res) => {
     })
 });
 
+router.get('/:userId/edit', (req, res) => {
+  const userIdToEdit = req.params.userId
+  User.findById(userIdToEdit)
+    .then( (user) => {
+      res.render('../views/user/edit', {
+        userId: user._id,
+        userName: user.userName,
+        userFirstName: user.firstName,
+        userLastName: user.lastName,
+        img: user.img,
+        email: user.email
+      })
+    })
+    .catch( (error) => {
+      console.log('Error rendering edit page');
+      console.log(error);
+    })
+});
+
+router.put('/:userId', (req, res) => {
+  const userInfoForUpdate = req.body;
+  const userIdToUpdate = req.params.userId;
+  User.findByIdAndUpdate(userIdToUpdate, userInfoForUpdate, {new: true})
+    .then( (user) => {
+      console.log(`User with id of ${user._id} was updated`);
+      res.render('../views/user/show', {
+        userName: user.userName,
+        userFirstName: user.firstName,
+        userLastName: user.lastName,
+        img: user.img,
+        email: user.email
+      })
+    })
+    .catch( (error) => {
+      console.log('Error updating user in db');
+      console.log(error);
+    })
+})
 module.exports = router;

@@ -1,0 +1,10 @@
+<h1>Edit {{userName}}</h1>
+
+<form method='POST' action='/users/{{userId}}?_method=PUT'>
+    <input type='text' name='firstName' value='{{userFirstName}}'>
+    <input type='text' name='lastName' value='{{userLastName}}'>
+    <input type='text' name='userName' value='{{userName}}'>
+    <input type='text' name='email' value='{{email}}'>
+    <input type='text' name='img' value="{{img}}">
+    <input type='submit' value='Submit Changes'>
+</form>
