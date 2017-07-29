@@ -83,6 +83,7 @@ router.put('/:userId', (req, res) => {
     .then( (user) => {
       console.log(`User with id of ${user._id} was updated`);
       res.render('../views/user/show', {
+        userId: user._id,
         userName: user.userName,
         userFirstName: user.firstName,
         userLastName: user.lastName,
@@ -98,6 +99,7 @@ router.put('/:userId', (req, res) => {
 
 router.get('/:userId/delete', (req, res) => {
   const userIdToDelete = req.params.userId;
+  console.log(userIdToDelete);
   User.findByIdAndRemove(userIdToDelete)
     .then( (user) => {
       console.log(`User with id ${user._id} was deleted`);
