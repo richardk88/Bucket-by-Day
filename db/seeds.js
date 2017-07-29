@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/bucket-by-day');
 
-const User = require('./schema/user.js');
-const BucketList = require('./schema/bucketList.js');
-const Activities = require('./schema/activities.js');
+const User = require('../models/user');
+const BucketList = require('../models/bucketList');
+const Activities = require('../models/activities');
 
 mongoose.Promise = global.Promise;
 

@@ -1,6 +1,6 @@
 var express = require('express');
-const User = require('../db/schema/user.js');
-const BucketLists = require('../db/schema/bucketList');
+const User = require('../models/user');
+const BucketLists = require('../models/bucketList');
 var router = express.Router({mergeParams: true});
 
 /* GET bucketList listing. */
@@ -32,7 +32,7 @@ router.get('/:bucketId', (req, res) => {
             res.send(foundBucket);
         })
         .catch((error) => {
-            console.log('Failed to find user');
+            console.log('Failed to find bucketlist');
         })
 })
 

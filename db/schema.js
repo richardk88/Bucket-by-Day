@@ -15,16 +15,6 @@ const activities = new Schema({
     price: Number,
 });
 
-
-activities.pre('save', function(next){
- now = new Date();
- this.updatedAt = now;
- if ( !this.createdAt ) {
-   this.createdAt = now;
- }
- next();
-});
-
 const bucketList = new Schema({
     name: String,
     description: String,
@@ -32,16 +22,7 @@ const bucketList = new Schema({
     updatedAt: Date,
     totalCost: Number,
     theme: [],
-    activities: []
-});
-
-bucketList.pre('save', function(next){
- now = new Date();
- this.updatedAt = now;
- if ( !this.createdAt ) {
-   this.createdAt = now;
- }
- next();
+    activities: [activities]
 });
 
 const user = new Schema({
@@ -52,7 +33,26 @@ const user = new Schema({
     img: String,
     createAt: Date,
     updatedAt: Date,
-    bucketLists: []
+    bucketLists: [bucketList]
+});
+
+
+activities.pre('save', function(next){
+ now = new Date();
+ this.updatedAt = now;
+ if ( !this.createdAt ) {
+   this.createdAt = now;
+ }
+ next();
+});
+
+bucketList.pre('save', function(next){
+ now = new Date();
+ this.updatedAt = now;
+ if ( !this.createdAt ) {
+   this.createdAt = now;
+ }
+ next();
 });
 
 user.pre('save', function(next){
@@ -69,7 +69,7 @@ const bucketListModel = mongoose.model('Bucket List', bucketList);
 const userModel = mongoose.model('User', user);
 
  module.exports = {
-    activitiesModel: activitiesModel,
-    bucketListModel: bucketListModel,
-    activitiesModel: activitiesModel
+    User: userModel,
+    BucketList: bucketListModel,
+    Activities: activitiesModel
 };
