@@ -73,4 +73,51 @@ router.get('/:bucketId', (req, res) => {
         })
 })
 
+router.get('/:bucketId/edit', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    User.findById(userId)
+        .then((user) => {
+            let foundBucket = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId
+            });
+            res.render('../views/bucketList/edit', {
+                userId: userId,
+                bucketId: bucketId,
+                bucketListName: foundBucket.name,
+                bucketListDescription: foundBucket.description,
+                bucketListTotalCost: foundBucket.totalCost,
+                activities: foundBucket.activities
+            });
+        })
+        .catch((error) => {
+            console.log('Failed to find bucketlist');
+        })
+})
+
+router.put('/:bucketId/', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    const bucketUpdateInfo = req.body;
+    User.findByIdAndUpdate(userId)
+        .then( (user) => {
+            let foundBucketToUpdate = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId});
+            foundBucketToUpdate.name = bucketUpdateInfo.name;
+            foundBucketToUpdate.description = bucketUpdateInfo.description;
+            foundBucketToUpdate.totalCost = bucketUpdateInfo.totalCost;
+            user.save();
+
+            console.log(`Bucketlist was updated for ${userId}`);
+            return res.render('../views/bucketList/show', {
+                userId: userId,
+                bucketListName: foundBucketToUpdate.name,
+                bucketListDescription: foundBucketToUpdate.description,
+                activities: foundBucketToUpdate.activities
+            })
+        })
+        .catch( (error) => {
+            console.log(error);
+        })
+})
 module.exports = router;

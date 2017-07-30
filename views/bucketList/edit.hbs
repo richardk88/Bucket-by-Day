@@ -1,0 +1,9 @@
+<h1>Edit Bucket List</h1>
+
+<form method='POST' action='/users/{{userId}}/bucketLists/{{bucketId}}?_method=PUT'>
+    <input type='text' name='name' value='{{bucketListName}}'>
+    <input type='text' name='description' value='{{bucketListDescription}}'>
+    <input type='text' name='totalCost' value=''{{bucketListTotalCost}}'>
+    <input type='submit' value='Edit Bucket List'>
+</form>
+<a href='/users/{{userId}}/bucketLists'>Go Back</a>
