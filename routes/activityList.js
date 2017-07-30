@@ -160,20 +160,24 @@ router.put('/:activityId/', (req, res) => {
         })
 });
 
-// router.get('/:bucketId/delete', (req, res) => {
-//     const userId = req.params.userId;
-//     const bucketId = req.params.bucketId;
-//     User.findById(userId)
-//         .then( (user) => {
-//             let foundBucketToDelete = user.bucketLists.find((bucket) => {
-//                 return bucket.id === bucketId});
-//             user.bucketLists.remove(foundBucketToDelete);
-//             user.save();
-//             res.redirect(`/users/${userId}/bucketLists`);
-//         })
-//         .catch( (error) => {
-//             console.log(error);
-//         })
-// });
+router.get('/:activityId/delete', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    const activityId = req.params.activityId;
+    User.findById(userId)
+        .then( (user) => {
+            let foundBucket = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId});
+            const foundActivityToDelete = foundBucket.activities.find( (activity) => {
+                return activity.id === activityId
+            })
+            foundBucket.activities.remove(foundActivityToDelete);
+            user.save();
+            res.redirect(`/users/${userId}/bucketLists/${bucketId}/activityList`);
+        })
+        .catch( (error) => {
+            console.log(error);
+        })
+});
 
 module.exports = router;
