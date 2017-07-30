@@ -1,7 +1,7 @@
 var express = require('express');
 const User = require('../models/user');
 const BucketLists = require('../models/bucketList');
-const activities = require('../models/activityList');
+const Activities = require('../models/activityList');
 var router = express.Router({mergeParams: true});
 
 /* GET bucketList listing. */
@@ -34,28 +34,36 @@ router.get('/new', (req, res) => {
     })
 });
 
-// router.post('/', (req, res) => {
-//     const userId = req.params.userId;
-//     const bucketListInfo = req.body;
-//     User.findById(userId)
-//         .then( (user) => {
-//             const newBucketList = new BucketLists (bucketListInfo)
-//             user.bucketLists.push(newBucketList);
-//             user.save();
+router.post('/', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId
+    const activityListInfo = req.body;
+    User.findById(userId)
+        .then( (user) => {
+            const newActivityList = new Activities (activityListInfo)
+            const foundBucket = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId
+            });
+            foundBucket.activities.push(newActivityList);
+            user.save();
 
-//             console.log(`Bucketlist was created for ${userId}`);
-//             return res.render('../views/bucketList/show', {
-//                 userId: userId,
-//                 bucketListName: newBucketList.name,
-//                 bucketListDescription: newBucketList.description,
-//                 activities: newBucketList.activities
-//             })
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//             console.log('Failed to create bucketlist');
-//         })
-// });
+            console.log(`Activity was created for ${bucketId}`);
+            return res.render('../views/activity/show', {
+                userId: userId,
+                bucketId: bucketId,
+                activityListName: newActivityList.name,
+                activityListDescription: newActivityList.description,
+                activityListLocation: newActivityList.location,
+                activityListLink: newActivityList.link,
+                activityListDuration: newActivityList.duration,
+                activityListPrice: newActivityList.price
+            })
+        })
+        .catch((error) => {
+            console.log(error);
+            console.log('Failed to create activity');
+        })
+});
 
 router.get('/:activityId', (req, res) => {
     const userId = req.params.userId;
