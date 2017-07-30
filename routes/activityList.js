@@ -25,12 +25,14 @@ router.get('/', (req, res, next) => {
     });
 });
 
-// router.get('/new', (req, res) => {
-//     const userId = req.params.userId;
-//     res.render('../views/bucketList/new', {
-//         userId: userId
-//     })
-// });
+router.get('/new', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId
+    res.render('../views/activity/new', {
+        userId: userId,
+        bucketId: bucketId
+    })
+});
 
 // router.post('/', (req, res) => {
 //     const userId = req.params.userId;
