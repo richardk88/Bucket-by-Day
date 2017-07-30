@@ -98,6 +98,7 @@ router.get('/:activityId/edit', (req, res) => {
             res.render('../views/activity/edit', {
                 userId: userId,
                 bucketId: bucketId,
+                activityId: activityId,
                 activityListName: foundActivity.name,
                 activityListDescription: foundActivity.description,
                 activityListLocation: foundActivity.location,
@@ -111,31 +112,43 @@ router.get('/:activityId/edit', (req, res) => {
         })
 });
 
-// router.put('/:bucketId/', (req, res) => {
-//     const userId = req.params.userId;
-//     const bucketId = req.params.bucketId;
-//     const bucketUpdateInfo = req.body;
-//     User.findByIdAndUpdate(userId)
-//         .then( (user) => {
-//             let foundBucketToUpdate = user.bucketLists.find((bucket) => {
-//                 return bucket.id === bucketId});
-//             foundBucketToUpdate.name = bucketUpdateInfo.name;
-//             foundBucketToUpdate.description = bucketUpdateInfo.description;
-//             foundBucketToUpdate.totalCost = bucketUpdateInfo.totalCost;
-//             user.save();
+router.put('/:activityId/', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    const activityId = req.params.activityId;
+    const activityUpdateInfo = req.body;
+    User.findByIdAndUpdate(userId)
+        .then( (user) => {
+            const foundBucket = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId
+            });
+            const foundActivityToUpdate = foundBucket.activities.find( (activity) => {
+                return activity.id === activityId
+            })
+            foundActivityToUpdate.name = activityUpdateInfo.name;
+            foundActivityToUpdate.description = activityUpdateInfo.description;
+            foundActivityToUpdate.location = activityUpdateInfo.location;
+            foundActivityToUpdate.link = activityUpdateInfo.link;
+            foundActivityToUpdate.duration = activityUpdateInfo.duration;
+            foundActivityToUpdate.price = activityUpdateInfo.price;
+            user.save();
 
-//             console.log(`Bucketlist was updated for ${userId}`);
-//             return res.render('../views/bucketList/show', {
-//                 userId: userId,
-//                 bucketListName: foundBucketToUpdate.name,
-//                 bucketListDescription: foundBucketToUpdate.description,
-//                 activities: foundBucketToUpdate.activities
-//             })
-//         })
-//         .catch( (error) => {
-//             console.log(error);
-//         })
-// });
+            console.log(`Activity was updated for ${bucketId}`);
+            return res.render('../views/activity/show', {
+                userId: userId,
+                bucketId: bucketId,
+                activityListName: foundActivityToUpdate.name,
+                activityListDescription: foundActivityToUpdate.description,
+                activityListLocation: foundActivityToUpdate.location,
+                activityListLink: foundActivityToUpdate.link,
+                activityListDuration: foundActivityToUpdate.duration,
+                activityListPrice: foundActivityToUpdate.price
+            })
+        })
+        .catch( (error) => {
+            console.log(error);
+        })
+});
 
 // router.get('/:bucketId/delete', (req, res) => {
 //     const userId = req.params.userId;
