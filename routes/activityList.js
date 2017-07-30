@@ -55,27 +55,33 @@ router.get('/', (req, res, next) => {
 //         })
 // });
 
-// router.get('/:bucketId', (req, res) => {
-//     const userId = req.params.userId;
-//     const bucketId = req.params.bucketId;
-//     User.findById(userId)
-//         .then((user) => {
-//             const foundBucket = user.bucketLists.find((bucket) => {
-//                 return bucket.id === bucketId
-//             });
-//             res.render('../views/bucketList/show', {
-//                 userId: userId,
-//                 bucketId: bucketId,
-//                 bucketListName: foundBucket.name,
-//                 bucketListDescription: foundBucket.description,
-//                 bucketListTotalCost: foundBucket.totalCost,
-//                 activities: foundBucket.activities
-//             });
-//         })
-//         .catch((error) => {
-//             console.log('Failed to find bucketlist');
-//         })
-// });
+router.get('/:activityId', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    const activityId = req.params.activityId;
+    User.findById(userId)
+        .then((user) => {
+            const foundBucket = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId
+            });
+            const foundActivity = foundBucket.activities.find( (activity) => {
+                return activity.id === activityId
+            })
+            res.render('../views/activity/show', {
+                userId: userId,
+                bucketId: bucketId,
+                activityListName: foundActivity.name,
+                activityListDescription: foundActivity.description,
+                activityListLocation: foundActivity.location,
+                activityListLink: foundActivity.link,
+                activityListDuration: foundActivity.duration,
+                activityListPrice: foundActivity.price
+            });
+        })
+        .catch((error) => {
+            console.log('Failed to find activity');
+        })
+});
 
 // router.get('/:bucketId/edit', (req, res) => {
 //     const userId = req.params.userId;
