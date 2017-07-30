@@ -2,6 +2,8 @@
 
 <ol>
     {{#each bucketList.activities}}
-        <li>{{this.name}}</li>
+        <li><a href="/users/{{../userId}}/bucketLists/{{../bucketId}}/activityList/{{this.id}}">{{this.name}}</a></li>
     {{/each}}
 </ol>
+
+<a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/new">New</a>

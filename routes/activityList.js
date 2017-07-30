@@ -80,6 +80,7 @@ router.get('/:activityId', (req, res) => {
             res.render('../views/activity/show', {
                 userId: userId,
                 bucketId: bucketId,
+                activityId: activityId,
                 activityListName: foundActivity.name,
                 activityListDescription: foundActivity.description,
                 activityListLocation: foundActivity.location,
