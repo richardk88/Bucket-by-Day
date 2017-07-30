@@ -1,6 +1,8 @@
  <h1>{{bucketListName}}</h1>
 
  <div>Description: {{bucketListDescription}} </div> 
+
+<h3><a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList">Activites</a></h3>
 <ol>
     {{#each activities}}
         <li>{{this.name}}</li>
