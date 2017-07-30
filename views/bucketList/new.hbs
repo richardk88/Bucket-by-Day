@@ -1,0 +1,9 @@
+<h1>Create Bucket List</h1>
+
+<form method='POST' action='/users/{{userId}}/bucketLists'>
+    <input type='text' name='name' placeholder='Name of Bucket List'>
+    <input type='text' name='description' placeholder='Description'>
+    <input type='text' name='totalCost' placeholder='Total Cost'>
+    <input type='submit' value='Create Bucket List'>
+</form>
+<a href='/users/{{userId}}/bucketLists'>Go Back</a>
