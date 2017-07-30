@@ -1,0 +1,12 @@
+<h1>Edit Activity List</h1>
+
+<form method='POST' action='/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}?_method=PUT'>
+    <input type='text' name='name' value='{{activityListName}}'>
+    <input type='text' name='description' value='{{activityListDescription}}'>
+    <input type='text' name='location' value='{{activityListLocation}}'>
+    <input type='text' name='link' value='{{activityListLink}}'>
+    <input type='text' name='duration' value='{{activityListDuration}}'>
+    <input type='number' name='price' value='{{activityListPrice}}'>
+    <input type='submit' value='Edit Activity List'>
+</form>
+
