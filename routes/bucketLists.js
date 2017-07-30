@@ -71,7 +71,7 @@ router.get('/:bucketId', (req, res) => {
         .catch((error) => {
             console.log('Failed to find bucketlist');
         })
-})
+});
 
 router.get('/:bucketId/edit', (req, res) => {
     const userId = req.params.userId;
@@ -93,7 +93,7 @@ router.get('/:bucketId/edit', (req, res) => {
         .catch((error) => {
             console.log('Failed to find bucketlist');
         })
-})
+});
 
 router.put('/:bucketId/', (req, res) => {
     const userId = req.params.userId;
@@ -119,5 +119,22 @@ router.put('/:bucketId/', (req, res) => {
         .catch( (error) => {
             console.log(error);
         })
-})
+});
+
+router.get('/:bucketId/delete', (req, res) => {
+    const userId = req.params.userId;
+    const bucketId = req.params.bucketId;
+    User.findById(userId)
+        .then( (user) => {
+            let foundBucketToDelete = user.bucketLists.find((bucket) => {
+                return bucket.id === bucketId});
+            user.bucketLists.remove(foundBucketToDelete);
+            user.save();
+            res.redirect(`/users/${userId}/bucketLists`);
+        })
+        .catch( (error) => {
+            console.log(error);
+        })
+});
+
 module.exports = router;
