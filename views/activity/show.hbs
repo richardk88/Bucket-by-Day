@@ -1,13 +1,24 @@
-<h1>{{activityListName}}</h1>
-
-<div>Description: {{activityListDescription}}</div>
-<div>Location: {{activityListLocation}}</div>
-<div>Link: {{activityListLink}}</div>
-<div>Duration: {{activityListDuration}}</div>
-<div>Price: {{activityListPrice}}</div>
-
-<a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}/edit">Edit</a>
-<br>
-<a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}/delete">Delete</a>
-<br>
-<a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/">Go Back</a>
+<div class="row">
+    <div class="container">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title"><h1>{{activityListName}}</h1></span>
+                    <div>Description: {{activityListDescription}}</div>
+                    <div>Location: {{activityListLocation}}</div>
+                    <div>Duration: {{activityListDuration}}</div>
+                    <div>Price: {{activityListPrice}}</div>
+            </div>
+            <div class="card-action">
+                <a href="{{activityListLink}}">More Info</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alignCenter">
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}/edit" class="waves-effect waves-light btn #00838f cyan darken-3">Edit</a>  
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}/delete" class="waves-effect waves-light btn #00838f cyan darken-3 spaceBetween">Delete</a>    
+</div>
+    <br>
+<div class="alignCenter go-back-btn">    
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/" class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+</div>

@@ -6,6 +6,11 @@ a {
   color: #00B7FF;
 }
 
+.alignCenter {
+  display: flex;
+  justify-content: center;
+}
+
 .userProfileImg {
   width: 100px;
   height: 100px;
@@ -21,4 +26,12 @@ a {
 .logo {
   height:35px;
   width:auto;
+}
+
+.go-back-btn {
+  margin-top: px;
+}
+
+.spaceBetween {
+  margin-left: 5px;
 }

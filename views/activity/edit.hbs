@@ -1,14 +1,22 @@
+<div class="alignCenter">
 <h1>Edit Activity List</h1>
+</div>
 
-<form method='POST' action='/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}?_method=PUT'>
-    <input type='text' name='name' value='{{activityListName}}'>
-    <input type='text' name='description' value='{{activityListDescription}}'>
-    <input type='text' name='location' value='{{activityListLocation}}'>
-    <input type='text' name='link' value='{{activityListLink}}'>
-    <input type='text' name='duration' value='{{activityListDuration}}'>
-    <input type='number' name='price' value='{{activityListPrice}}'>
-    <input type='submit' value='Edit Activity List'>
-</form>
-
-<a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/">Go Back</a>
-
+<div class="row">
+    <div class="container">
+        <form method='POST' action='/users/{{userId}}/bucketLists/{{bucketId}}/activityList/{{activityId}}?_method=PUT'>
+            <input type='text' name='name' value='{{activityListName}}'>
+            <input type='text' name='description' value='{{activityListDescription}}'>
+            <input type='text' name='location' value='{{activityListLocation}}'>
+            <input type='text' name='link' value='{{activityListLink}}'>
+            <input type='text' name='duration' value='{{activityListDuration}}'>
+            <input type='number' name='price' value='{{activityListPrice}}'>
+            <div class="alignCenter">
+                <input type='submit' value='Submit' class="waves-effect waves-light btn #00838f cyan darken-3">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="alignCenter">
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/" class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+</div>
