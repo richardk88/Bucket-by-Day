@@ -7,12 +7,13 @@
               <span class="card-title">{{userName}}</span>
             </div>
             <div class="card-content">
-                <p>First Name: {{userFirstName}}</p>
-                <p>Last Name: {{userLastName}}</p>
-                <p>Email: {{email}}</p>
+                <p>FIRST NAME: {{userFirstName}}</p>
+                <p>LAST NAME: {{userLastName}}</p>
+                <p>EMAIL: {{email}}</p>
             </div>
             <div class="card-action">
-                <a href="/users/{{userId}}/bucketLists">Bucket Lists</a>
+                <a href="/users/{{userId}}/bucketLists">Go To Bucket Lists</a>
+                <h5>Bucket Lists</h5>
                 <ol>
                     {{#each bucketLists}}
                         <li>{{this.name}}</li>

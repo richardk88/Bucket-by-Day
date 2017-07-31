@@ -3,7 +3,7 @@
         <div class="alignCenter">
             <h1 class="bucketFont"> {{bucketList.name}} </h1>
         </div>
-            <div class="collection">
+            <div class="collection z-depth-5">
                 {{#each bucketList.activities}}
                 <a class="collection-item" href="/users/{{../userId}}/bucketLists/{{../bucketId}}/activityList/{{this.id}}">{{this.name}}</a>                
                 {{/each}}
@@ -11,9 +11,9 @@
     </div>
 </div>
 <div class="alignCenter">
-    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/new" class="waves-effect waves-light btn #00838f cyan darken-3">Creat New Activity</a>
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/new" class="waves-effect waves-light btn #ffb300 amber darken-1 z-depth-5">Create New Activity</a>
 </div>
 <br>
 <div class="alignCenter">
-    <a href='/users/{{userId}}/bucketLists/{{bucketId}}' class="waves-effect waves-light btn #00838f cyan darken-3 go-back-btn">Go Back</a>
+    <a href='/users/{{userId}}/bucketLists/{{bucketId}}' class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Go Back</a>
 </div>

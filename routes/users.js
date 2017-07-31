@@ -29,7 +29,8 @@ router.post('/', (req, res) => {
         userFirstName: user.firstName,
         userLastName: user.lastName,
         email: user.email,
-        bucketLists: user.bucketLists
+        bucketLists: user.bucketLists,
+        userId: user._id
       })
     })
     .catch( (error) => {

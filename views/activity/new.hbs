@@ -1,8 +1,9 @@
-<div class="alignCenter">
-    <h1>New Activity List</h1>
-</div>
+
 <div class="row">
     <div class="container">
+        <div class="alignCenter">
+        <h1 class="bucketFont">Create New Activity</h1>
+         </div>
         <form method='POST' action='/users/{{userId}}/bucketLists/{{bucketId}}/activityList/'>
             <input type='text' name='name' placeholder='Name'>
             <input type='text' name='description' placeholder='Description'>
@@ -11,11 +12,11 @@
             <input type='text' name='duration' placeholder='Duration'>
             <input type='number' name='price' placeholder='Price'>
             <div class="alignCenter">
-                <input type='submit' value='Create New List' class="waves-effect waves-light btn #00838f cyan darken-3">
+                <input type='submit' value='Create New List' class="waves-effect waves-light btn #ffb300 amber darken-1 z-depth-5">
             </div>
         </form>
     </div>
 </div>
 <div class="alignCenter">
-    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/" class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+    <a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList/" class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Go Back</a>
 </div>

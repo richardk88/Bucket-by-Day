@@ -1,16 +1,18 @@
-<h1 class="bucketFont">Create Bucket List</h1>
 <div class="row">
     <div class="container">
+        <div class="alignCenter">
+        <h1 class="bucketFont">Create Bucket List</h1>
+        </div>
         <form method='POST' action='/users/{{userId}}/bucketLists'>
             <input type='text' name='name' placeholder='Name of Bucket List'>
             <input type='text' name='description' placeholder='Description'>
             <input type='text' name='totalCost' placeholder='Total Cost'>
             <div class="alignCenter">
-                <input type='submit' class="waves-effect waves-light btn #00838f cyan darken-3" value='Create Bucket List'>
+                <input type='submit' class="waves-effect waves-light btn #ffb300 amber darken-1 z-depth-5" value='Create Bucket List'>
             </div>
         </form>
     </div>
 </div>
 <div class="alignCenter">
-    <a href='/users/{{userId}}/bucketLists' class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+    <a href='/users/{{userId}}/bucketLists' class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Go Back</a>
 </div>
