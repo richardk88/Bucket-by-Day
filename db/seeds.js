@@ -142,7 +142,7 @@ const cydUser = new User (
         lastName: 'Segui-Barreto',
         userName: 'CydVicious',
         email: 'cyd@yahoo.com',
-        img: '',
+        img: 'http://www.advanced.style/media/IMG_0566_2-682x1024.jpg',
         bucketLists: [cydBucketList1, cydBucketList2, cydBucketList3]
     }
 )
@@ -238,7 +238,7 @@ const jeffreyUser = new User (
         lastName: 'Dawson',
         userName: 'Jdawson',
         email: 'Jdawg@yahoo.com',
-        img: 'https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+        img: 'https://static.pexels.com/photos/157966/person-young-man-beard-emotions-157966.jpeg',
         bucketLists:[jeffreyBucketList1, jeffreyBucketList2]
     }
 )

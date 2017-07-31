@@ -4,10 +4,25 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    {{{body}}}
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper navColor">
+            <a href="/users" class="brand-logo"><img src="../images/bucket.png" class="logo">Bucket by Day</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/users"><i class="material-icons">home</i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
 
+    {{{body}}}
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   </body>
 </html>

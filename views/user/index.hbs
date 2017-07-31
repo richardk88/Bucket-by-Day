@@ -1,7 +1,9 @@
 <h1>Users:</h1>
 <ul>
-    {{#each users}}
-    <li><img src="https://lh5.ggpht.com/9UDY3O4wSwlBm-kHHfjKf85Yk5GCt0nckL5ZdMR-nYotAfNjODvR4sZ-scPXG3ABVF65=w300"><a href='/users/{{this.id}}'>{{this.userName}}</a></li>
-    {{/each}}
+        {{#each users}}
+        <div class="center chip">
+            <img src="{{this.img}}" class="userProfileImg"><a href='/users/{{this.id}}'>{{this.userName}}</a>
+         </div>
+        {{/each}}
 </ul>
 <a href='users/new'>Create New User</a>
