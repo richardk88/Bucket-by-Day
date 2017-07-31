@@ -24,7 +24,24 @@ body {
 }
 
 .bucketFont {
+  color: #00838f;
   font-family: 'Covered By Your Grace', cursive;
+}
+
+.bucketFontWhite {
+  color: white;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+.edith1 {
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+.editlists {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {

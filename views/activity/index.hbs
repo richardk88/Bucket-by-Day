@@ -1,11 +1,12 @@
 <div class="row">
     <div class="container">
         <div class="alignCenter">
-            <h1> {{bucketList.name}} </h1>
+            <h1 class="bucketFont"> {{bucketList.name}} </h1>
         </div>
             <div class="collection">
                 {{#each bucketList.activities}}
-                <a class="collection-item" href="/users/{{../userId}}/bucketLists/{{../bucketId}}/activityList/{{this.id}}">{{this.name}}</a>                {{/each}}
+                <a class="collection-item" href="/users/{{../userId}}/bucketLists/{{../bucketId}}/activityList/{{this.id}}">{{this.name}}</a>                
+                {{/each}}
             </div>
     </div>
 </div>

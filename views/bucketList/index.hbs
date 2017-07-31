@@ -1,19 +1,22 @@
-<div class="edith1">
-    <h1>{{userName}}'s Bucket Lists</h1>
+<div class="row">
+<div class="container">
+<div class="alignCenter">
+    <h1 class="bucketFont">{{userName}}'s Bucket Lists</h1>
 </div>
 
+<div class="collection">
 {{#each bucketLists}}
-<div class="editlists">
-    <div class="collection">
+    <div class="collection-item">
         <a href="/users/{{../userId}}/bucketLists/{{this._id}}" class="collection-item">{{this.name}}</a>
     </div>
-</div>
 {{/each}}
-
+</div>
 <div class="alignCenter">
     <a href="/users/{{userId}}/bucketLists/new" class="waves-effect waves-light btn #00838f cyan darken-3">New Bucket List</a>
 </div>
 <br>
 <div class="alignCenter">
     <a href='/users/{{userId}}' class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+</div>
+</div>
 </div>
