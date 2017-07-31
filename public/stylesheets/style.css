@@ -1,24 +1,37 @@
 body {
-  background-color: #eeeeee;
+  background-color: #eeeeee; 
+  background: url('https://static.pexels.com/photos/2255/black-and-white-city-houses-skyline.jpg') no-repeat fixed center; 
+  background-size: cover;
 }
 
-a {
+.userLink {
   color: #00B7FF;
 }
 
+.alignCenter {
+   display: flex;
+   justify-content: center; 
+}
 .userProfileImg {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 5px solid white;
 }
 
 .navColor {
-  background-color: rgb(0,0,0);
+  background-color: #00838f;
+}
+
+.bucketFont {
   font-family: 'Covered By Your Grace', cursive;
 }
 
 .logo {
   height:35px;
   width:auto;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #ffb300 !important;
 }

@@ -1,17 +1,31 @@
-<h1>{{userName}}'s Profile
-
-<div>First Name: {{userFirstName}}</div>
-<div>Last Name: {{userLastName}}</div>
-<div>Email: {{email}}</div>
-<h3><a href="/users/{{userId}}/bucketLists">Bucket Lists</a></h3>
-<ol>
-    {{#each bucketLists}}
-    <li>{{this.name}}</li>
-    {{/each}}
-</ol>
+<div class="alignCenter">
+<div class="row">
+        <div class="container">
+          <div class="card z-depth-5">
+            <div class="responsive-img card-image">
+              <img src="{{userImg}}">
+              <span class="card-title">{{userName}}</span>
+            </div>
+            <div class="card-content">
+                <p>First Name: {{userFirstName}}</p>
+                <p>Last Name: {{userLastName}}</p>
+                <p>Email: {{email}}</p>
+            </div>
+            <div class="card-action">
+                <a href="/users/{{userId}}/bucketLists">Bucket Lists</a>
+                <ol>
+                    {{#each bucketLists}}
+                        <li>{{this.name}}</li>
+                    {{/each}}
+                </ol>
+                <a href='/users/{{userId}}/edit' class="blue-text text-darken-2 userLink">Edit Profile</a>
+                <a href='/users/{{userId}}/delete' class="blue-text text-darken-2 userLink">Delete Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="alignCenter">
+<a href='/users' class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Go Back</a>
+</div>
 <br>
-<a href='/users/{{userId}}/edit'>Edit</a>
-<br>
-<a href='/users/{{userId}}/delete'>Delete</a>
-<br>
-<a href='/users'>Go Back</a>

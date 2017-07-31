@@ -1,11 +1,19 @@
-<h1>Create New User</h1>
+<div class="row">
+<div class="container">
+<h1 class="text-#00838f cyan-text text-darken-3 bucketFont">CREATE NEW USER</h1>
 
 <form method='POST' action='/users'>
-    <input type='text' name='firstName' placeholder='First Name'>
+    <input class="input-field" type='text' name='firstName' placeholder='First Name'>
     <input type='text' name='lastName' placeholder='Last Name'>
     <input type='text' name='userName' placeholder='User Name'>
     <input type='text' name='email' placeholder='Email'>
     <input type='text' name='img' placeholder="Your Profile Picture Link">
-    <input type='submit' value='Create User'>
+    <div class="alignCenter">
+    <input type='submit' value='Create User' class="waves-effect waves-light btn #ffb300 amber darken-1 z-depth-5">
+    </div>
 </form>
-<a href='/users'>Go Back</a>
+<br>
+<div class="alignCenter">
+<a href='/users' class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Go Back</a>
+</div>
+</div>
