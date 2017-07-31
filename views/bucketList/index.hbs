@@ -1,10 +1,19 @@
-<h1>{{userName}}'s Bucket Lists</h1>
-<ol>
-    {{#each bucketLists}}
-        <li><a href="/users/{{../userId}}/bucketLists/{{this._id}}">{{this.name}}</a></li>
-    {{/each}}
-</ol>
+<div class="edith1">
+    <h1>{{userName}}'s Bucket Lists</h1>
+</div>
 
-<a href="/users/{{userId}}/bucketLists/new">New Bucket List</a>
+{{#each bucketLists}}
+<div class="editlists">
+    <div class="collection">
+        <a href="/users/{{../userId}}/bucketLists/{{this._id}}" class="collection-item">{{this.name}}</a>
+    </div>
+</div>
+{{/each}}
+
+<div class="editlinks">
+<a href="/users/{{userId}}/bucketLists/new" class="waves-effect waves-light btn #00838f cyan darken-3">New Bucket List</a>
 <br>
-<a href="/users/{{userId}}">Go Back</a>
+<br>
+<a href='/users/{{userId}}' class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+</div>
+            

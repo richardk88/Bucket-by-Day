@@ -6,6 +6,10 @@ a {
   color: #00B7FF;
 }
 
+.alignCenter {
+  display: flex;
+  justify-content: center;
+}
 .userProfileImg {
   width: 100px;
   height: 100px;
@@ -21,4 +25,17 @@ a {
 .logo {
   height:35px;
   width:auto;
+}
+.edith1 {
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+.editlists {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+{
+ 
 }
