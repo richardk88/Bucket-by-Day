@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/bucket-by-day');
-require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI); 
+mongoose.connect('mongodb://localhost/bucket-by-day');
+// require('dotenv').config();
+// mongoose.connect(process.env.MONGODB_URI); 
 
 const User = require('../models/user');
 const BucketList = require('../models/bucketList');
@@ -26,7 +26,7 @@ const cydActivities1 = new Activities (
         description: 'No one should start their night on an empty stomach. No bueno.',
         location: '683 Boulevard NE, Atlanta, GA 30308',
         duration: '30 min',
-        link: 'http://popeyes.com/',
+        linkToInfo: 'http://popeyes.com/',
         price: 6
     }
 )
@@ -37,7 +37,7 @@ const cydActivities2 = new Activities (
         description: 'Cause you gonna get thirsty',
         location: '1156 Euclid Ave NE, Atlanta, GA 30307',
         duration: '2 hrs',
-        link: 'http://www.theporterbeerbar.com/',
+        linkToInfo: 'http://www.theporterbeerbar.com/',
         price: 50
     }
 )
@@ -48,7 +48,7 @@ const cydActivities3 = new Activities (
         description: 'Why not?',
         location: '241 Forsyth St SW, Atlanta, GA 30303',
         duration: '6 hrs',
-        link: 'http://www.magiccity.com/',
+        linkToInfo: 'http://www.magiccity.com/',
         price: 600
     }
 )
@@ -68,7 +68,7 @@ const cydActivities4 = new Activities (
        description: 'Cause you should not drink and drive, kids.',
        location: '1199 Atlanta Industrial Dr, Marietta, GA 30066',
        duration: '4+ hrs',
-       link: 'http://www.furbus.com/',
+       linkToInfo: 'http://www.furbus.com/',
        price: 500
    }
 )
@@ -79,7 +79,7 @@ const cydActivities5 = new Activities (
        description: 'Bc the chicken wings are hittin\' and so are the girls',
        location: '887 Spring St NW, Atlanta, GA 30308',
        duration: '4+ hrs',
-       link: 'https://www.thecheetah.com/',
+       linkToInfo: 'https://www.thecheetah.com/',
        price: 1000
    }
 )
@@ -100,7 +100,7 @@ const cydActivities6 = new Activities (
        description: 'Because its criminal',
        location: '1044 Greenwood Ave NE, Atlanta, GA 30306',
        duration: '2 hrs',
-       link: 'http://www.illegalfoodatlanta.com/',
+       linkToInfo: 'http://www.illegalfoodatlanta.com/',
        price: 20
    }
 )
@@ -111,7 +111,7 @@ const cydActivities7 = new Activities (
        description: 'Catch a flick',
        location: '1049 Ponce De Leon Ave NE, Atlanta, GA 30306',
        duration: '2 hrs',
-       link: 'http://plazaatlanta.com/',
+       linkToInfo: 'http://plazaatlanta.com/',
        price: 20
    }
 )
@@ -122,7 +122,7 @@ const cydActivities8 = new Activities (
        description: 'Because everyone should go here before they die.',
        location: '828 North Highland Avenue Northeast, Atlanta, GA 30306',
        duration: '3 hrs',
-       link: 'http://www.blindwilliesblues.com/',
+       linkToInfo: 'http://www.blindwilliesblues.com/',
        price: 50
    }
 )
@@ -154,7 +154,7 @@ const jeffreyActivities1 = new Activities (
         description: 'Go see the the current DJ',
         location: '1150 Crescent Ave NE, Atlanta, GA 30309',
         duration: '2 hr',
-        link: 'http://operaatlanta.com/',
+        linkToInfo: 'http://operaatlanta.com/',
         price: 50,
     }
 )
@@ -165,7 +165,7 @@ const jeffreyActivities2 = new Activities (
         description: 'Go grab some beers after the show for night cap',
         location: '420 Edgewood Avenue, Atlanta, GA 30312',
         duration: '2 hr',
-        link: 'http://www.georgiabeergarden.com',
+        linkToInfo: 'http://www.georgiabeergarden.com',
         price: 20,
     }
 )
@@ -176,7 +176,7 @@ const jeffreyActivities3 = new Activities (
         description: "Go get some some food after hanging with friends at the Georgia Beer Garden",
         location: '66 5th St NW, Atlanta, GA 30308',
         duration: '45 min',
-        link: 'http://www.wafflehouse.com',
+        linkToInfo: 'http://www.wafflehouse.com',
         price: 20,
     }
 )
@@ -196,7 +196,7 @@ const jeffreyActivities4 = new Activities (
         description: 'Go see the the current DJ',
         location: '1150 Crescent Ave NE, Atlanta, GA 30309',
         duration: '2 hr',
-        link: 'http://operaatlanta.com/',
+        linkToInfo: 'http://operaatlanta.com/',
         price: 50,
     }
 )
@@ -207,7 +207,7 @@ const jeffreyActivities5 = new Activities (
         description: 'Go grab some beers after the show for night cap',
         location: '420 Edgewood Avenue, Atlanta, GA 30312',
         duration: '2 hr',
-        link: 'http://www.georgiabeergarden.com',
+        linkToInfo: 'http://www.georgiabeergarden.com',
         price: 20,
     }
 )
@@ -218,7 +218,7 @@ const jeffreyActivities6 = new Activities (
         description: "Go get some some food after hanging with friends at the Georgia Beer Garden",
         location: '66 5th St NW, Atlanta, GA 30308',
         duration: '45 min',
-        link: 'http://www.wafflehouse.com',
+        linkToInfo: 'http://www.wafflehouse.com',
         price: 20,
     }
 )
@@ -250,7 +250,7 @@ const murphyActivities1 = new Activities (
         description: 'Rent a bike for a few hours and ride it on the beltline.',
         location: '123 MLK Drive, Atlanta, GA 30303',
         duration: '1.5 hr',
-        link: 'https://beltline.org/',
+        linkToInfo: 'https://beltline.org/',
         price: 10
     }
 )
@@ -261,7 +261,7 @@ const murphyActivities2 = new Activities (
         description: 'Hike up Stone Mountain.',
         location: '1000 Robert E. Lee Blvd Stone Mountain, GA 30083',
         duration: '2 hr',
-        link: 'http://www.stonemountainpark.com/',
+        linkToInfo: 'http://www.stonemountainpark.com/',
         price: 20
     }
 )
@@ -282,7 +282,7 @@ const murphyActivities3 = new Activities (
         description: 'Rent a bike for a few hours and ride it on the beltline.',
         location: '123 MLK Drive, Atlanta, GA 30303',
         duration: '1.5 hr',
-        link: 'https://beltline.org/',
+        linkToInfo: 'https://beltline.org/',
         price: 10
     }
 )
@@ -293,7 +293,7 @@ const murphyActivities4 = new Activities (
         description: 'Hike up Stone Mountain.',
         location: '1000 Robert E. Lee Blvd Stone Mountain, GA 30083',
         duration: '2 hr',
-        link: 'http://www.stonemountainpark.com/',
+        linkToInfo: 'http://www.stonemountainpark.com/',
         price: 20
     }
 )

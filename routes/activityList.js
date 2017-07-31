@@ -84,7 +84,7 @@ router.get('/:activityId', (req, res) => {
                 activityListName: foundActivity.name,
                 activityListDescription: foundActivity.description,
                 activityListLocation: foundActivity.location,
-                activityListLink: foundActivity.link,
+                activityListLink: foundActivity.linkToInfo,
                 activityListDuration: foundActivity.duration,
                 activityListPrice: foundActivity.price
             });
