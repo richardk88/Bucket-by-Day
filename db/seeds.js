@@ -85,10 +85,10 @@ const cydActivities5 = new Activities (
 
 const cydBucketList2 = new BucketList (
     {
-        name: 'Debauchary2',
-        description: 'When you start out real chill and classy-like but end it like G.',
+        name: 'Bachelorette Party',
+        description: 'Last night to live it up',
         theme: 'Wavy Nights',
-        totalCost: 0,
+        totalCost: 1500,
         activities: [cydActivities4, cydActivities5]
     }
 )
@@ -128,20 +128,20 @@ const cydActivities8 = new Activities (
 
 const cydBucketList3 = new BucketList (
     {
-        name: 'Debauchary3',
-        description: 'When you start out real chill and classy-like but end it like G.',
-        theme: 'Wavy Nights',
-        totalCost: 0,
+        name: 'Date Night',
+        description: 'A night out on the town with bae.',
+        theme: 'Romance',
+        totalCost: 100,
         activities: [cydActivities6, cydActivities7, cydActivities8]
     }
 )
 
 const cydUser = new User (
     {
-        firstName: 'Cyd',
-        lastName: 'Segui-Barreto',
-        userName: 'CydVicious',
-        email: 'cyd@yahoo.com',
+        firstName: 'Maude',
+        lastName: 'Rupert',
+        userName: 'MaudeR',
+        email: 'maude@yahoo.com',
         img: 'http://www.advanced.style/media/IMG_0566_2-682x1024.jpg',
         bucketLists: [cydBucketList1, cydBucketList2, cydBucketList3]
     }

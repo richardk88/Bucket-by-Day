@@ -2,19 +2,30 @@
 
  <div class="alignCenter">Description: {{bucketListDescription}} </div> 
 
-<h3><a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList">Activites</a></h3>
-<ol>
-    {{#each activities}}
-        <li>{{this.name}}</li>
-    {{/each}}    
-</ol>
+<h3 class="alignCenter"><a href="/users/{{userId}}/bucketLists/{{bucketId}}/activityList">Activites</a></h3>
+
+<div class="row">
+    <div class="container">
+        <ol>
+            <div class="collection">
+            {{#each activities}}
+                <a class="collection-item">{{this.name}}</a>
+            {{/each}}    
+            </div>
+        </ol>
+    </div>
+</div>
+<div class="alignCenter">
 <a href="/users/{{userId}}/bucketLists/{{bucketId}}/delete" class="waves-effect waves-light btn #00838f cyan darken-3">Delete</a>  
+</div>
 <br>
-<br>
+<div class="alignCenter">
 <a href="/users/{{userId}}/bucketLists/{{bucketId}}/edit" class="waves-effect waves-light btn #00838f cyan darken-3">Edit</a>
+</div>
 <br>
-<br>
+<div class="alignCenter">
 <a href="/users/{{userId}}/bucketLists/" class="waves-effect waves-light btn #00838f cyan darken-3">Go Back</a>
+</div>
   
   
   
