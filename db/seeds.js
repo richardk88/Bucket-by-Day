@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+
 // mongoose.connect('mongodb://localhost/bucket-by-day');
+require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URI); 
 
 const User = require('../models/user');
