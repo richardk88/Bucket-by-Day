@@ -1,9 +1,22 @@
-<h1>Users:</h1>
+<div class="row">
+<div class="container">
+<div class="alignCenter bucketFont">
+        <h1 class="text-#00838f cyan-text text-darken-3 ">USERS</h1>
+</div>
 <ul>
         {{#each users}}
-        <div class="center chip">
-            <img src="{{this.img}}" class="userProfileImg"><a href='/users/{{this.id}}'>{{this.userName}}</a>
-         </div>
+        <div class="alignCenter">
+                <img src="{{this.img}}" class="userProfileImg z-depth-5">
+        </div>
+        <br>
+        <div class="alignCenter">
+                <a href='/users/{{this.id}}' class="waves-effect waves-light btn #ffb300 amber darken-1 z-depth-5">{{this.userName}}</a>
+        </div>
+        <br>
         {{/each}}
 </ul>
-<a href='users/new'>Create New User</a>
+<div class="alignCenter">
+        <a href='users/new' class="waves-effect waves-light btn #00838f cyan darken-3 z-depth-5">Create New User</a>
+</div>
+</div>
+</div>

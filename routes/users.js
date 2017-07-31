@@ -44,6 +44,7 @@ router.get('/:userId', (req,res) => {
     .then( (user) => {
       res.render('../views/user/show',{
         userId: user._id,
+        userImg: user.img,
         userName: user.userName,
         userFirstName: user.firstName,
         userLastName: user.lastName,
