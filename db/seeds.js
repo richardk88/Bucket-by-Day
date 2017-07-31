@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/bucket-by-day');
-// mongoose.connect(process.env.MONGODB_URI); 
+require('dotenv').config();
+// mongoose.connect('mongodb://localhost/bucket-by-day');
+mongoose.connect(process.env.MONGODB_URI); 
 
 const User = require('../models/user');
 const BucketList = require('../models/bucketList');
