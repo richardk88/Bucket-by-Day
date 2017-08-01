@@ -30,7 +30,8 @@ router.post('/', (req, res) => {
         userLastName: user.lastName,
         email: user.email,
         bucketLists: user.bucketLists,
-        userId: user._id
+        userId: user._id,
+        userImg: user.img
       })
     })
     .catch( (error) => {
@@ -89,7 +90,8 @@ router.put('/:userId', (req, res) => {
         userName: user.userName,
         userFirstName: user.firstName,
         userLastName: user.lastName,
-        img: user.img,
+        bucketLists: user.bucketLists,
+        userImg: user.img,
         email: user.email
       })
     })

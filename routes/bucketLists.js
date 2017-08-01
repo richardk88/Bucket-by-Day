@@ -111,6 +111,7 @@ router.put('/:bucketId/', (req, res) => {
             console.log(`Bucketlist was updated for ${userId}`);
             return res.render('../views/bucketList/show', {
                 userId: userId,
+                bucketId: foundBucketToUpdate.id,
                 bucketListName: foundBucketToUpdate.name,
                 bucketListDescription: foundBucketToUpdate.description,
                 activities: foundBucketToUpdate.activities

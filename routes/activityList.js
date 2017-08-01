@@ -148,6 +148,7 @@ router.put('/:activityId/', (req, res) => {
             return res.render('../views/activity/show', {
                 userId: userId,
                 bucketId: bucketId,
+                activityId: foundActivityToUpdate.id,
                 activityListName: foundActivityToUpdate.name,
                 activityListDescription: foundActivityToUpdate.description,
                 activityListLocation: foundActivityToUpdate.location,
