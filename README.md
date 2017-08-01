@@ -6,7 +6,9 @@ ERD: http://i.imgur.com/THIcw0y.jpg
 
 Application Wireframe: 
 http://i.imgur.com/8jBiD6N.jpg
+<br>
 http://i.imgur.com/uE0dHsg.jpg
+<br>
 http://i.imgur.com/R7Ilago.jpg
 
 
@@ -17,28 +19,48 @@ User Stories:  https://trello.com/b/AYKETtQZ/wdi-project-2-bucketbyday
 
 Future Development: 
   Rank lists
+  <br>
   Search by lists and/or activities
+  <br>
   Back to top button
+  <br>
   Google Maps API
+ <br>
   List of accomplished bucket lists
+  <br>
   Display page of currently added bucket list from another user
+  <br>
   Sort lists by recently created
+  <br>
   Pop up asking users if they are sure they'd like to delete
 
 Technologies Used:
   Heroku
+  <br>
   Node.js
+  <br>
   MongoDB
+  <br>
   Mongoose
+  <br>
   HTML5
+  <br>
   CSS3
+  <br>
   JQuery
+  <br>
   JavaScript
+  <br>
   Materialize CSS
+  <br>
   Google Fonts
+  <br>
   Trello
+  <br>
   Imgur
+  <br>
   VS Code Editor
+  <br>
   Pexels.com (Images)
 
 
