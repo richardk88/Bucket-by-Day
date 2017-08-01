@@ -65,7 +65,7 @@ user.pre('save', function(next){
 });
 
 const activitiesModel = mongoose.model('Activities', activities);
-const bucketListModel = mongoose.model('Bucket List', bucketList);
+const bucketListModel = mongoose.model('BucketList', bucketList);
 const userModel = mongoose.model('User', user);
 
  module.exports = {
