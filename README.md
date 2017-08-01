@@ -5,6 +5,7 @@ Heroku Link: https://mysterious-waters-71092.herokuapp.com
 ERD: http://i.imgur.com/THIcw0y.jpg
 
 Application Wireframe: 
+<br>
 http://i.imgur.com/8jBiD6N.jpg
 <br>
 http://i.imgur.com/uE0dHsg.jpg
