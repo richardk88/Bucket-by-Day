@@ -56,3 +56,19 @@ body {
 .invisibleForm {
   display:none;
 }
+
+p {
+  text-align: center;
+}
+
+.splashh1 {
+  display: flex;
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 150px;
+  padding-top: 60px;
+}
+.splashfont {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 24px;
+}

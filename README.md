@@ -1,6 +1,6 @@
 # Bucket-by-Day
 
-Heroku Link: https://mysterious-waters-71092.herokuapp.com/users
+Heroku Link: https://mysterious-waters-71092.herokuapp.com
 
 ERD: http://i.imgur.com/THIcw0y.jpg
 
