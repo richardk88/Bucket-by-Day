@@ -13,13 +13,13 @@ ERD: http://i.imgur.com/THIcw0y.jpg
 <a href="http://imgur.com/R7Ilago"><img src="http://i.imgur.com/R7Ilago.jpg" title="source: imgur.com" /></a>
 
 
-##App Overview
+## App Overview
 
 Bucket by Day is an application where a user can create a profile with their bucket list items that can be accomplished in a day.  They can create multiple lists and activities witin that list.  Users have the ability to look at other users bucket lists and add them to their own, if they choose to do so.  This application is intended to bring users together to share their ideas on cool dailty activities you "must" do before you...kick the bucket, so to speak.  
 
 User Stories:  https://trello.com/b/AYKETtQZ/wdi-project-2-bucketbyday
 
-##Future Development
+## Future Development
 
  * Rank lists
  * Search by lists and/or activities
@@ -30,7 +30,7 @@ User Stories:  https://trello.com/b/AYKETtQZ/wdi-project-2-bucketbyday
  * Sort lists by recently created
  * Pop up asking users if they are sure they'd like to delete
 
-##Technologies Used
+## Technologies Used
 
  * Heroku
  * Node.js
