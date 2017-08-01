@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="container">
+        <div class="alignCenter">
+        <h1 class="bucketFont">All User Bucket Lists</h1>
+        </div>
+        {{#each arrayOfBucketLists}}
+        <div class="card blue-grey darken-1 z-depth-5">
+            <div class="card-content white-text">
+                <span class="card-title"><h1 class="bucketFontWhite">{{this.name}}</h1></span>
+                <div>DESCRIPTION: {{this.description}}</div>
+                <div class="card-action">
+                    <h5>Activities</h5>
+                    <ol>
+                        {{#each this.activities}}
+                        <li>{{this.name}}</li>
+                        {{/each}}
+                    </ol>
+                    <div class="invisibleForm">
+                    <form method='POST' action='/users/{{../userId}}/userBucketLists'>
+                    <input type='text' name='name' value='{{this.name}}'>
+                    <input type='text' name='description' value='{{this.description}}'>
+                    <input type='text' name='activities' value='{{this.activities}}'>
+                    <input type='text' name='totalCost' value='{{this.totalCost}}'>
+                    </div>
+                    <input type='submit' value='Add' class='btn #ffb300 amber darken-1'>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
