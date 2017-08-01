@@ -31,10 +31,7 @@ router.post('/', (req, res) => {
     const bucketListInfo = req.body;
     User.findById(userId)
         .then( (user) => {
-            const newActivityList = new Activities (bucketListInfo.activities);
             const newBucketList = new BucketLists (bucketListInfo);
-            console.log(newActivityList);
-            newBucketList.activities.push(newActivityList);
             user.bucketLists.push(newBucketList);
             user.save();
 
