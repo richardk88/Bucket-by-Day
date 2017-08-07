@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
                 activityListName: newActivityList.name,
                 activityListDescription: newActivityList.description,
                 activityListLocation: newActivityList.location,
-                activityListLink: newActivityList.link,
+                activityListLink: newActivityList.linkToInfo,
                 activityListDuration: newActivityList.duration,
                 activityListPrice: newActivityList.price
             })
@@ -113,7 +113,7 @@ router.get('/:activityId/edit', (req, res) => {
                 activityListName: foundActivity.name,
                 activityListDescription: foundActivity.description,
                 activityListLocation: foundActivity.location,
-                activityListLink: foundActivity.link,
+                activityListLink: foundActivity.linkToInfo,
                 activityListDuration: foundActivity.duration,
                 activityListPrice: foundActivity.price
             });
@@ -139,7 +139,7 @@ router.put('/:activityId/', (req, res) => {
             foundActivityToUpdate.name = activityUpdateInfo.name;
             foundActivityToUpdate.description = activityUpdateInfo.description;
             foundActivityToUpdate.location = activityUpdateInfo.location;
-            foundActivityToUpdate.link = activityUpdateInfo.link;
+            foundActivityToUpdate.link = activityUpdateInfo.linkToInfo;
             foundActivityToUpdate.duration = activityUpdateInfo.duration;
             foundActivityToUpdate.price = activityUpdateInfo.price;
             user.save();
@@ -152,7 +152,7 @@ router.put('/:activityId/', (req, res) => {
                 activityListName: foundActivityToUpdate.name,
                 activityListDescription: foundActivityToUpdate.description,
                 activityListLocation: foundActivityToUpdate.location,
-                activityListLink: foundActivityToUpdate.link,
+                activityListLink: foundActivityToUpdate.linkToInfo,
                 activityListDuration: foundActivityToUpdate.duration,
                 activityListPrice: foundActivityToUpdate.price
             })
