@@ -4,7 +4,7 @@ Heroku Link: https://mysterious-waters-71092.herokuapp.com
 
 ERD: http://i.imgur.com/THIcw0y.jpg
 
-##Application Wireframe 
+## Application Wireframe 
 
 <a href="http://imgur.com/8jBiD6N"><img src="http://i.imgur.com/8jBiD6N.jpg" title="source: imgur.com" /></a>
 
