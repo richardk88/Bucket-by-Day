@@ -4,7 +4,7 @@ Heroku Link: https://mysterious-waters-71092.herokuapp.com
 
 ## App Overview
 
-Bucket by Day is an application where a user can create a profile with their bucket list items that can be accomplished in a day.  They can create multiple lists and activities witin that list.  Users have the ability to look at other users bucket lists and add them to their own, if they choose to do so.  This application is intended to bring users together to share their ideas on cool dailty activities you "must" do before you...kick the bucket, so to speak.  
+Bucket by Day is an application where a user can create a profile with their bucket list items that can be accomplished in a day.  They can create multiple lists and activities witin that list.  Users have the ability to look at other users bucket lists and add them to their own, if they choose to do so.  This application is intended to bring users together to share their ideas on cool daily activities you "must" do before you...kick the bucket, so to speak.  
 
 User Stories:  https://trello.com/b/AYKETtQZ/wdi-project-2-bucketbyday
 
